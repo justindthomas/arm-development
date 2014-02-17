@@ -35,15 +35,47 @@ From another terminal, upload the binary to the board.
 
 ```
 telnet localhost 4444
+
+# show current status
 poll
+
+# halt processor
 reset halt
+
+# show flash details
 flash probe 0
+
+# write binary to flash
 flash write_image erase build/ch.bin 0x08000000
+
+# reset unit and exit
 reset
 exit
 ```
 
-Relevant URLS:
+Using st-flash instead of OpenOCD.
+
+Build st-flash.
+
+```
+sudo aptitude install build-essential autoconf
+git clone https://github.com/texane/stlink stlink.git
+cd stlink.git
+./autogen.sh
+./configure
+make
+cd flash
+make
+sudo cp ./st-flash /usr/bin
+```
+
+Uploading using st-flash.
+
+```
+st-flash write build/ch.bin 0x08000000
+```
+
+Relevant URLs:
 
 * [gcc and OpenOCD](http://sourcegate.wordpress.com/2012/09/18/getting-started-with-an-stm32l-discovery-with-linux-and-gcc/)
 * [Getting started with ChibiOS](http://recursive-labs.com/rtos-guide/hello-world-chibios/)
