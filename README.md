@@ -31,6 +31,7 @@ echo "export PATH=~/arm-cs-tools/bin:$PATH" >>~/.zshrc
 ```
 
 Install ChibiOS
+---------------
 
 ```
 git clone https://github.com/ChibiOS/ChibiOS-RT
@@ -43,7 +44,7 @@ rm -rf iar keil
 Change `Makefile` to point CHIBIOS to the correct path. Alter main.c as desired. Then `make`. Start debugger (or use st-flash as noted below).
 
 ```
-cd ~/ARMCM3-STM32L152-DISCOVERY
+cd ~/arm-devel
 openocd -f /usr/share/openocd/scripts/board/stm32ldiscovery.cfg
 ```
 
@@ -69,7 +70,10 @@ reset
 exit
 ```
 
-Using st-flash instead of OpenOCD.
+There's some neat stuff in one of the links below about using gdb to debug the process running on the chip. Something to keep in mind for the future.
+
+Using st-flash instead of OpenOCD
+---------------------------------
 
 Build st-flash.
 
