@@ -47,3 +47,4 @@ Relevant URLS:
 
 * [gcc and OpenOCD](http://sourcegate.wordpress.com/2012/09/18/getting-started-with-an-stm32l-discovery-with-linux-and-gcc/)
 * [Getting started with ChibiOS](http://recursive-labs.com/rtos-guide/hello-world-chibios/)
+* [Programming the STM32](http://startingelectronics.com/tutorials/STM32-microcontrollers/programming-STM32-flash-in-Linux/)
