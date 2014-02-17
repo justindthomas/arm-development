@@ -3,7 +3,9 @@ Installing OpenOCD (On-Chip Debugger)
 
 ```
 # Mac OS X: just brew install openocd
+```
 
+```
 # Ubuntu
 sudo aptitude install checkinstall
 tar -zxvf openocd-x.y.z.tar.gz
