@@ -2,7 +2,8 @@ Installing OpenOCD (On-Chip Debugger)
 -------------------------------------
 
 ```
-# Mac OS X: just brew install openocd
+# Mac OS X
+brew install openocd
 ```
 
 ```
