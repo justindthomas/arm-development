@@ -12,7 +12,18 @@ sudo checkinstall make install
 Cross-Compiler
 
 ```
+# Ubuntu
 sudo aptitude install gcc-arm-none-eabi
+```
+
+```
+# Mac OS X
+brew install mpfr gmp libmpc libelf texinfo
+git clone https://github.com/jsnyder/arm-eabi-toolchain
+cd arm-eabi-toolchain
+make install-cross
+
+echo "export PATH=~/arm-cs-tools/bin:$PATH" >>~/.zshrc
 ```
 
 Install ChibiOS
@@ -20,11 +31,12 @@ Install ChibiOS
 ```
 git clone https://github.com/ChibiOS/ChibiOS-RT
 cd ChibiOS-RT/demos
-cp -r ARMCM3-STM32L152-DISCOVERY ~/
-cd ~/ARMCM3-STM32L152-DISCOVERY
+cp -r ARMCM3-STM32L152-DISCOVERY ~/arm-devel
+cd ~/arm-devel
+rm -rf iar keil
 ```
 
-Change `Makefile` to point CHIBIOS to the correct path. Alter main.c as desired. Then `make`. Start debugger.
+Change `Makefile` to point CHIBIOS to the correct path. Alter main.c as desired. Then `make`. Start debugger (or use st-flash as noted below).
 
 ```
 cd ~/ARMCM3-STM32L152-DISCOVERY
@@ -58,15 +70,21 @@ Using st-flash instead of OpenOCD.
 Build st-flash.
 
 ```
+# Ubuntu
 sudo aptitude install build-essential autoconf
-git clone https://github.com/texane/stlink stlink.git
-cd stlink.git
+
+# Mac OS X
+brew install libusb
+
+git clone https://github.com/texane/stlink
+cd stlink
 ./autogen.sh
 ./configure
 make
 cd flash
 make
-sudo cp ./st-flash /usr/bin
+
+sudo cp ./st-flash ~/bin
 ```
 
 Uploading using st-flash.
