@@ -18,13 +18,13 @@ sudo aptitude install gcc-arm-none-eabi
 Install ChibiOS
 
 ```
-unzip ChibiOS_2.4.1.zip
-cd ~/ChibiOS_2.4.1/demos
+git clone https://github.com/ChibiOS/ChibiOS-RT
+cd ChibiOS-RT/demos
 cp -r ARMCM3-STM32L152-DISCOVERY ~/
 cd ~/ARMCM3-STM32L152-DISCOVERY
 ```
 
-Alter main.c as desired. Then `make`. Start debugger.
+Change `Makefile` to point CHIBIOS to the correct path. Alter main.c as desired. Then `make`. Start debugger.
 
 ```
 cd ~/ARMCM3-STM32L152-DISCOVERY
