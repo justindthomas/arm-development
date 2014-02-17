@@ -80,3 +80,4 @@ Relevant URLs:
 * [gcc and OpenOCD](http://sourcegate.wordpress.com/2012/09/18/getting-started-with-an-stm32l-discovery-with-linux-and-gcc/)
 * [Getting started with ChibiOS](http://recursive-labs.com/rtos-guide/hello-world-chibios/)
 * [Programming the STM32](http://startingelectronics.com/tutorials/STM32-microcontrollers/programming-STM32-flash-in-Linux/)
+* [Doing it all on Mac OS X](http://blog.y3xz.com/blog/2012/10/07/setting-up-an-arm-eabi-toolchain-on-mac-os-x)
