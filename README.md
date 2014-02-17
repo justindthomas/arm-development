@@ -1,4 +1,5 @@
-OpenOCD (On-Chip Debugger)
+Installing OpenOCD (On-Chip Debugger)
+-------------------------------------
 
 ```
 # Mac OS X: just brew install openocd
@@ -13,7 +14,8 @@ make
 sudo checkinstall make install
 ```
 
-Cross-Compiler
+Installing cross-compiler
+-------------------------
 
 ```
 # Ubuntu
@@ -30,7 +32,7 @@ make install-cross
 echo "export PATH=~/arm-cs-tools/bin:$PATH" >>~/.zshrc
 ```
 
-Install ChibiOS
+Installing ChibiOS
 ---------------
 
 ```
@@ -41,7 +43,10 @@ cd ~/arm-devel
 rm -rf iar keil
 ```
 
-Change `Makefile` to point CHIBIOS to the correct path. Alter main.c as desired. Then `make`. Start debugger (or use st-flash as noted below).
+Change `Makefile` to point CHIBIOS to the correct path. Alter main.c as desired. Then `make`.
+
+Using OpenOCD to upload binary
+------------------------------
 
 ```
 cd ~/arm-devel
@@ -73,9 +78,9 @@ exit
 There's some neat stuff in one of the links below about using gdb to debug the process running on the chip. Something to keep in mind for the future.
 
 Using st-flash instead of OpenOCD
----------------------------------
+--------------------------------- 
 
-Build st-flash.
+*Build st-flash*
 
 ```
 # Ubuntu
@@ -95,13 +100,14 @@ make
 sudo cp ./st-flash ~/bin
 ```
 
-Uploading using st-flash.
+*Uploading using st-flash*
 
 ```
 st-flash write build/ch.bin 0x08000000
 ```
 
-Relevant URLs:
+Relevant URLs
+-------------
 
 * [gcc and OpenOCD](http://sourcegate.wordpress.com/2012/09/18/getting-started-with-an-stm32l-discovery-with-linux-and-gcc/)
 * [Getting started with ChibiOS](http://recursive-labs.com/rtos-guide/hello-world-chibios/)
