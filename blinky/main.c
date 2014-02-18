@@ -1,9 +1,18 @@
 #include <ch.h>
 #include <hal.h>
 
+#include <stm32l1xx_lcd.h>
+
+const uint8_t Hello[] = "ChibiOS";
+
 int main(void) {
   halInit();
   chSysInit();
+
+  /*
+   * This initialization requires the OS already active because it uses delay
+   * APIs inside.
+   */
 
   int active = GPIOB_LED4;
   int inactive = GPIOB_LED3;
